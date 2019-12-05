@@ -17,12 +17,14 @@ export default class FileUpload extends React.Component{
 
     handleSubmit=(e)=>{
         e.preventDefault()
+        this.props.handleUploadMsg(true)
         const formData=new FormData()
         formData.append('file',this.state.file)
         axios.post('/upload',formData)
         .then((response)=>{
             const data=response.data
             this.props.handleData(data)
+            this.props.handleUploadMsg(false)
         })
         .catch((err)=>{
             console.log(err)

@@ -39,7 +39,7 @@ export default class Search extends React.Component{
                 <label>Filter by PinCode:
                 <input type="text" name="pincode" onChange={this.handlePincode}/>
                 </label>
-                <label> or by Date:
+                <label> Filter by Date:
                 <input type="text" name="date" onInput={this.handleDate}/>
                 </label>
             </>

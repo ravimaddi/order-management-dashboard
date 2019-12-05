@@ -5,7 +5,7 @@ export default class Table extends React.Component{
     constructor(props){
         super(props)
         this.state={
-            data:props.jsonData
+            data:[]
         }
     }
 
@@ -37,8 +37,8 @@ export default class Table extends React.Component{
                     <tr>
                         <th>Order Id</th>
                         <th>Customer Id 
-                        <i onClick={this.handleInc} className="fas fa-sort-up"></i>
-                        <i onClick={this.handleDesc} className="fas fa-sort-down"></i>
+                        <i onClick={this.handleInc} className="fas fa-sort-up fa-2x"></i>
+                        <i onClick={this.handleDesc} className="fas fa-sort-down fa-2x"></i>
                         </th>
                         <th>Pin Code</th>
                         <th>Order Date</th>

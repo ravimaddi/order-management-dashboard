@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
 const axios=Axios.create({
-    baseURL:'/'
+    baseURL:'/api'
 })
 
 export default axios

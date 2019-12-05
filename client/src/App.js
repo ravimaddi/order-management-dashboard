@@ -8,7 +8,8 @@ class App extends React.Component{
     this.state={
       data:[],
       filteredData:[],
-      msg:false
+      isMsg:false,
+      msg:''
     }
   }
   handleData=(data)=>{
@@ -17,8 +18,13 @@ class App extends React.Component{
   handleFilteredData=(data)=>{
     this.setState({filteredData:data})
   }
-  handleUploadMsg=(data)=>{
-    this.setState({msg:data})
+  handleUploadMsg=(b,msg)=>{
+    if(msg){
+    this.setState({isMsg:b,msg:msg.err})
+    }
+    else{
+      this.setState({isMsg:b})
+    }
   }
   render(){
   return (
@@ -27,7 +33,7 @@ class App extends React.Component{
       <br/>
       <FileUpload handleData={this.handleData} handleUploadMsg={this.handleUploadMsg}/>
       <br/>
-      {(this.state.msg)?<h4>The File is being Processed,Please Wait..</h4>:null}
+      {(this.state.isMsg)?<h4>{this.state.msg}</h4>:null}
       {(this.state.data.length>0)? <Search handleFilteredData={this.handleFilteredData} jsonData={this.state.data}/>:null}
       <br/> <br/>
       {this.state.filteredData.length>0?<p>Showing {this.state.filteredData.length}  out of {this.state.data.length} orders</p>:null}

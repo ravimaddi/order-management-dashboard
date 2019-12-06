@@ -31,7 +31,7 @@ export default class Table extends React.Component{
     }
     render(){
         return(
-            <>
+            <div className="container">
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -61,7 +61,7 @@ export default class Table extends React.Component{
                     })}
                 </tbody>
             </table>
-            </>
+            </div>
         )
     }
 
